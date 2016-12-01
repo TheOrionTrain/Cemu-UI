@@ -1,0 +1,154 @@
+* {
+    font-family: 'Open Sans';
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 75%, 0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+#cemu-ui {
+    position: relative;
+    top: calc(50vh - 360px);
+    left: calc(50vw - 640px);
+    width: 1280px;
+    height: 720px;
+    background-color: #ededed;
+}
+#navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 150px;
+    background: #262626;
+}
+h1 {
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+#games {
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    width: calc(1280px - 100px);
+    height: 250px;
+}
+#games .game {
+    display: inline-block;
+    width: 175px;
+    height: 250px;
+    margin: 0 15px;
+    padding: 0;
+    transition: .33s;
+    transform-origin: center;
+    animation-name: fadeInUp;
+    animation-duration: .4s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 2px 0 rgba(30, 30, 30, .25);
+    animation-fill-mode: backwards;
+    vertical-align: top;
+}
+.game:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px 0 rgba(30, 30, 30, .25) !important;
+}
+#games .game.add {
+    border: 1px solid #ddd;
+    font-size: 100px;
+    color: #ddd;
+    text-align: center;
+    line-height: 250px;
+}
+#launch {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 720px;
+    z-index: 2;
+}
+#launch .background {
+    filter: blur(3px);
+    background-color: #262626;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 720px;
+    z-index: 1;
+}
+#launch .info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 720px;
+    z-index: 2;
+    background: rgba(30,30,30,.5);
+}
+#launch .cover {
+    position: absolute;
+    top: 160px;
+    left: 100px;
+    width: 280px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 2px 2px 0 rgba(30, 30, 30, .25);
+}
+#launch h2 {
+    position: absolute;
+    top: 160px;
+    left: 430px;
+    line-height: 50px;
+    font-size: 50px;
+    font-weight: 300;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+#launch p {
+    font-size: 18px;
+    line-height: 28px;
+    color: #fff;
+    position: absolute;
+    top: 260px;
+    left: 430px;
+    padding: 0;
+    margin: 0;
+    width: calc(1280px - 530px);
+}
+#launch a {
+    display: block;
+    margin: 50px 0 0 0;
+    font-size: 20px;
+    color: #fff;
+    background: #00acd2;
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-decoration: none;
+    width: 180px;
+    text-align: center;
+}
