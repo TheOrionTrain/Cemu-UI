@@ -19,55 +19,122 @@
     left: calc(50vw - 640px);
     width: 1280px;
     height: 720px;
-    background-color: #ededed;
+    background: #ededed;
+    overflow: hidden;
 }
 #navigation {
     position: absolute;
     top: 0;
     left: 0;
     width: 1280px;
-    height: 150px;
+    height: 720px;
     background: #262626;
+    z-index: 10;
+    transition: 1s;
+}
+#navigation.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 150px;
+    background: transparent;
 }
 h1 {
-    font-size: 50px;
-    font-weight: 300;
-    line-height: 50px;
     position: absolute;
+    transform: translateY(200px);
     top: 50px;
     left: 50px;
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 60px;
     margin: 0;
     padding: 0;
     color: #fff;
+    transition: 1s;
+    text-align: center;
+    width: calc(1280px - 100px);
+}
+.top h1 {
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 50px;
+    transform: translateY(0);
+    width: 196px;
+}
+#navigation a {
+    display: block;
+    position: absolute;
+    top: 400px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-decoration: none;
+    width: 200px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    transition: 1s;
+    cursor: pointer;
+}
+#navigation #directory {
+    background: #00acd2;
+    left: 420px;
+}
+#navigation #settings {
+    background: #444;
+    right: 420px;
+}
+#navigation.top #directory {
+    top: 50px;
+    left: 965px;
+    width: 142px;
+    padding: 0;
+    opacity: 0;
+    background: transparent;
+}
+#navigation.top #settings {
+    top: 50px;
+    right: 50px;
+    width: 75px;
+    padding: 0;
+    background: transparent;
 }
 #games {
     position: absolute;
     top: 200px;
     left: 50px;
-    width: calc(1280px - 100px);
+    width: calc(1280px - 350px);
     height: 250px;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
-#games .game {
-    display: inline-block;
-    width: 175px;
-    height: 250px;
-    margin: 0 15px;
-    padding: 0;
-    transition: .33s;
-    transform-origin: center;
-    animation-name: fadeInUp;
-    animation-duration: .4s;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    box-shadow: 0 0 2px 0 rgba(30, 30, 30, .25);
-    animation-fill-mode: backwards;
-    vertical-align: top;
+#games .game td {
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,.15);
+    color: #fff;
+    transition: 0.4s;
+    font-size: 18px;
 }
-.game:hover {
+.game .icon {
+    width: 10%;
+}
+.game .name {
+    width: 50%;
+}
+.game .flag {
+    width: 20%;
+}
+.game .status {
+    width: 20%;
+}
+.game:hover td {
     cursor: pointer;
-    transform: scale(1.1);
-    box-shadow: 0 6px 25px 0 rgba(30, 30, 30, .25) !important;
+    background: rgba(255,255,255,.1);
+}
+.game .icon img {
+    width: 50px;
+    height: 50px;
+    background: #000;
 }
 #games .game.add {
     border: 1px solid #ddd;
@@ -85,12 +152,13 @@ h1 {
     height: 720px;
     z-index: 2;
 }
-#launch .background {
+#background {
     filter: blur(3px);
     background-color: #262626;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-image: url("../img/background/Hyrule Warriors.jpg");
     position: absolute;
     top: 0;
     left: 0;
@@ -98,57 +166,12 @@ h1 {
     height: 720px;
     z-index: 1;
 }
-#launch .info {
+#cemu-ui .container {
     position: absolute;
     top: 0;
     left: 0;
     width: 1280px;
     height: 720px;
     z-index: 2;
-    background: rgba(30,30,30,.5);
-}
-#launch .cover {
-    position: absolute;
-    top: 160px;
-    left: 100px;
-    width: 280px;
-    height: 400px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    box-shadow: 0 2px 2px 0 rgba(30, 30, 30, .25);
-}
-#launch h2 {
-    position: absolute;
-    top: 160px;
-    left: 430px;
-    line-height: 50px;
-    font-size: 50px;
-    font-weight: 300;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
-#launch p {
-    font-size: 18px;
-    line-height: 28px;
-    color: #fff;
-    position: absolute;
-    top: 260px;
-    left: 430px;
-    padding: 0;
-    margin: 0;
-    width: calc(1280px - 530px);
-}
-#launch a {
-    display: block;
-    margin: 50px 0 0 0;
-    font-size: 20px;
-    color: #fff;
-    background: #00acd2;
-    border-radius: 8px;
-    padding: 10px 20px;
-    text-decoration: none;
-    width: 180px;
-    text-align: center;
+    background: rgba(30,30,30,.45);
 }
