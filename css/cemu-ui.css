@@ -165,6 +165,10 @@ h1 {
     width: 1280px;
     height: 720px;
     z-index: 1;
+	-webkit-transition: background 100ms ease-in 50ms;
+    -moz-transition: background 100ms ease-in 50ms;
+    -o-transition: background 100ms ease-in 50ms;
+    transition: background 100ms ease-in 50ms;
 }
 #cemu-ui .container {
     position: absolute;
