@@ -4,6 +4,15 @@
     box-sizing: border-box;
     backface-visibility: hidden;
 }
+* ::-webkit-scrollbar {
+    width: 10px;
+}
+* ::-webkit-scrollbar-track {
+    opacity: 0;
+}
+* ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .333);
+}
 @keyframes fadeInUp {
     from {
         transform: translate3d(0, 75%, 0);
@@ -139,20 +148,26 @@ h2 {
     font-weight: 400;
     margin: 0 0 5px;
 }
-#games {
+#games-container {
     position: absolute;
     top: 200px;
     left: 50px;
+    height: 470px;
+    overflow-y: scroll;
     width: calc(1280px - 350px);
+}
+#games {
+    width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
 }
 #games .game td {
-    padding: 15px;
+    padding: 10px 15px;
     border-top: 1px solid rgba(255,255,255,.15);
     color: #fff;
     transition: 0.4s;
     font-size: 18px;
+    vertical-align: middle;
 }
 .game .icon {
     width: 10%;
@@ -173,10 +188,15 @@ h2 {
     cursor: pointer;
     background: rgba(255,255,255,.1);
 }
-.game .icon img {
+.game .icon img{
     width: 50px;
     height: 50px;
-    background: #000;
+}
+.game .flag img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px 0 0;
+    vertical-align: -13px;
 }
 #games .game.add {
     border: 1px solid #ddd;
