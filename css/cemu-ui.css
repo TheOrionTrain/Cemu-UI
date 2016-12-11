@@ -27,20 +27,20 @@
     position: relative;
     top: calc(50vh - 360px);
     left: calc(50vw - 640px);
+    overflow: hidden;
     width: 1280px;
     height: 720px;
     background: #ededed;
-    overflow: hidden;
 }
 #navigation {
     position: absolute;
+    z-index: 10;
     top: 0;
     left: 0;
     width: 1280px;
     height: 720px;
-    background: #262626;
-    z-index: 10;
     transition: 1s;
+    background: #262626;
 }
 #navigation.top {
     position: absolute;
@@ -51,59 +51,59 @@
     background: transparent;
 }
 h1 {
-    position: absolute;
-    transform: translateY(200px);
-    top: 50px;
-    left: 50px;
     font-size: 60px;
     font-weight: 300;
     line-height: 60px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: calc(1280px - 100px);
     margin: 0;
     padding: 0;
-    color: #fff;
     transition: 1s;
+    transform: translateY(200px);
     text-align: center;
-    width: calc(1280px - 100px);
+    color: #fff;
 }
 h1 span {
-    vertical-align: middle;
     font-size: 14px;
     font-weight: 400;
+    vertical-align: middle;
 }
 .top h1 {
     font-size: 50px;
     font-weight: 300;
     line-height: 50px;
-    transform: translateY(0);
     width: 196px;
+    transform: translateY(0);
 }
 #navigation a {
-    display: block;
+    font-size: 20px;
     position: absolute;
     top: 400px;
-    border-radius: 8px;
-    padding: 10px 20px;
-    text-decoration: none;
+    display: block;
     width: 200px;
-    text-align: center;
-    color: #fff;
-    font-size: 20px;
-    transition: 1s;
+    padding: 10px 20px;
     cursor: pointer;
+    transition: 1s;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 8px;
 }
 #navigation #directory {
-    background: #00acd2;
     left: 420px;
+    background: #00acd2;
 }
 #navigation #settings {
-    background: #444;
     right: 420px;
+    background: #444;
 }
 #settings img {
     width: 22px;
     height: 22px;
-    vertical-align: -5px;
     margin-right: 5px;
+    vertical-align: -5px;
 }
 #navigation.top #directory {
     top: 50px;
@@ -122,39 +122,36 @@ h1 span {
 }
 #game-info {
     position: absolute;
+    top: 200px;
+    right: 50px;
     width: 200px;
     height: 470px;
-    right: 50px;
-    top: 200px;
 }
 #game-icon {
     width: 128px;
     height: 128px;
-    background-image: url("../img/icon/Hyrule Warriors.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url('../img/icon/Hyrule Warriors.png') no-repeat center/contain;
 }
 h2 {
-    margin: 20px 0;
-    color: #fff;
     font-size: 20px;
     height: 55px;
+    margin: 20px 0;
+    color: #fff;
 }
 #game-info span {
-    display: block;
-    color: #fff;
     font-size: 13px;
     font-weight: 400;
+    display: block;
     margin: 0 0 5px;
+    color: #fff;
 }
 #games-container {
     position: absolute;
     top: 200px;
     left: 50px;
-    height: 470px;
     overflow-y: scroll;
     width: calc(1280px - 350px);
+    height: 470px;
 }
 #games {
     width: 100%;
@@ -162,12 +159,12 @@ h2 {
     border-collapse: collapse;
 }
 #games .game td {
-    padding: 10px 15px;
-    border-top: 1px solid rgba(255,255,255,.15);
-    color: #fff;
-    transition: 0.4s;
     font-size: 18px;
+    padding: 10px 15px;
+    transition: .4s;
     vertical-align: middle;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, .15);
 }
 .game .icon {
     width: 10%;
@@ -175,20 +172,14 @@ h2 {
 .game .name {
     width: 50%;
 }
-.game .flag {
-    width: 20%;
-}
-.game .status {
-    width: 20%;
-}
-.game .lastplayed {
+.game .flag, .game .lastplayed, .game.status {
     width: 20%;
 }
 .game:hover td, .game.selected td {
     cursor: pointer;
-    background: rgba(255,255,255,.1);
+    background: rgba(255, 255, 255, .1);
 }
-.game .icon img{
+.game .icon img {
     width: 50px;
     height: 50px;
 }
@@ -198,49 +189,38 @@ h2 {
     margin: 0 10px 0 0;
     vertical-align: -13px;
 }
-#games .game.add {
-    border: 1px solid #ddd;
-    font-size: 100px;
-    color: #ddd;
-    text-align: center;
-    line-height: 250px;
-}
 #launch {
-    margin: 40px 0 0;
-    display: block;
-    border-radius: 8px;
-    padding: 10px 20px;
-    text-decoration: none;
-    width: 200px;
-    text-align: center;
-    color: #fff;
     font-size: 18px;
-    transition: 1s;
+    display: block;
+    width: 200px;
+    margin: 40px 0 0;
+    padding: 10px 20px;
     cursor: pointer;
+    transition: 1s;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 8px;
     background: #00acd2;
 }
 #background {
-    filter: blur(3px);
-    background-color: #262626;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url("../img/background/Hyrule Warriors.jpg");
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 1280px;
     height: 720px;
-    z-index: 1;
+    background: url('../img/background/Hyrule Warriors.jpg') no-repeat center/cover #262626;
+    filter: blur(3px);
 }
 #cemu-ui .container {
     position: absolute;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 1280px;
     height: 720px;
-    z-index: 2;
-    background: rgba(30,30,30,.45);
+    background: rgba(30, 30, 30, .45);
 }
 #background, #game-icon {
     transition: background 100ms ease-in 50ms;
