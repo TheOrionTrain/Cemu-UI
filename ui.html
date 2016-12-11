@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Cemu</title>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
         <link rel="stylesheet" href="css/cemu-ui.css">
         <script src="js/jquery.min.js"></script>
         <script src="js/cemu-ui.js"></script>
@@ -12,11 +12,18 @@
             <div id="background"></div>
             <div class="container">
                 <div id="navigation">
-                    <h1>Cemu UI</h1>
+                    <h1>Cemu <span>1.6.3</span></h1>
                     <a id="directory">Game Directory</a>
-                    <a id="settings">Settings</a>
+                    <a id="settings"><img src="img/settings.svg"> Settings</a>
                 </div>
                 <table id="games"></table>
+                <div id="game-info">
+                    <div id="game-icon"></div>
+                    <h2></h2>
+                    <span id="game-playtime"></span>
+                    <span id="game-lastplayed"></span>
+                    <a id="launch">Launch Game</a>
+                </div>
             </div>
         </div>
     </body>

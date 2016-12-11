@@ -1,5 +1,6 @@
 * {
     font-family: 'Open Sans';
+    font-weight: 300;
     box-sizing: border-box;
     backface-visibility: hidden;
 }
@@ -55,6 +56,11 @@ h1 {
     text-align: center;
     width: calc(1280px - 100px);
 }
+h1 span {
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 400;
+}
 .top h1 {
     font-size: 50px;
     font-weight: 300;
@@ -84,6 +90,12 @@ h1 {
     background: #444;
     right: 420px;
 }
+#settings img {
+    width: 22px;
+    height: 22px;
+    vertical-align: -5px;
+    margin-right: 5px;
+}
 #navigation.top #directory {
     top: 50px;
     left: 965px;
@@ -95,16 +107,43 @@ h1 {
 #navigation.top #settings {
     top: 50px;
     right: 50px;
-    width: 75px;
+    width: 104px;
     padding: 0;
     background: transparent;
+}
+#game-info {
+    position: absolute;
+    width: 200px;
+    height: 470px;
+    right: 50px;
+    top: 200px;
+}
+#game-icon {
+    width: 128px;
+    height: 128px;
+    background-image: url("../img/icon/Hyrule Warriors.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+h2 {
+    margin: 20px 0;
+    color: #fff;
+    font-size: 20px;
+    height: 55px;
+}
+#game-info span {
+    display: block;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0 0 5px;
 }
 #games {
     position: absolute;
     top: 200px;
     left: 50px;
     width: calc(1280px - 350px);
-    height: 250px;
     border-spacing: 0;
     border-collapse: collapse;
 }
@@ -130,7 +169,7 @@ h1 {
 .game .lastplayed {
     width: 20%;
 }
-.game:hover td {
+.game:hover td, .game.selected td {
     cursor: pointer;
     background: rgba(255,255,255,.1);
 }
@@ -147,13 +186,18 @@ h1 {
     line-height: 250px;
 }
 #launch {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1280px;
-    height: 720px;
-    z-index: 2;
+    margin: 40px 0 0;
+    display: block;
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-decoration: none;
+    width: 200px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    transition: 1s;
+    cursor: pointer;
+    background: #00acd2;
 }
 #background {
     filter: blur(3px);
@@ -168,10 +212,6 @@ h1 {
     width: 1280px;
     height: 720px;
     z-index: 1;
-	-webkit-transition: background 100ms ease-in 50ms;
-    -moz-transition: background 100ms ease-in 50ms;
-    -o-transition: background 100ms ease-in 50ms;
-    transition: background 100ms ease-in 50ms;
 }
 #cemu-ui .container {
     position: absolute;
@@ -181,4 +221,7 @@ h1 {
     height: 720px;
     z-index: 2;
     background: rgba(30,30,30,.45);
+}
+#background, #game-icon {
+    transition: background 100ms ease-in 50ms;
 }
