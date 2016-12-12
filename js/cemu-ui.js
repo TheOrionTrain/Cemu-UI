@@ -1,6 +1,4 @@
 var cemu = {
-    exe: "C:\\Users\\Ryan\\Desktop\\cemu\\cemu.exe",
-    gamedir: "E:\\Games\\cemu",
     initialize: function() {
         /*if (localStorage.getItem("exe")) {
             $('#navigation').addClass('top');
