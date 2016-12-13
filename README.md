@@ -8,13 +8,13 @@
 - Sort by Name/Region/Etc
 - Get Cemu version
 
-## Fix directory trees
+## ~~Fix directory trees~~
 
-Cemu-UI.exe should be in the main directory, everything else in /src/ like this:
-- /Cemu-UI/Cemu-UI.exe
-- /Cemu-UI/src/cef/[CEF Dlls]
-- /Cemu-UI/src/ui.html
-- /Cemu-UI/src/js/cemu-ui.js
-- /Cemu-UI/src/meta/[Meta files]
+~~Cemu-UI.exe should be in the main directory, everything else in /src/ like this:~~
+- ~~/Cemu-UI/Cemu-UI.exe~~
+- ~~/Cemu-UI/src/cef/[CEF Dlls]~~
+- ~~/Cemu-UI/src/ui.html~~
+- ~~/Cemu-UI/src/js/cemu-ui.js~~
+- ~~/Cemu-UI/src/meta/[Meta files]~~
 
-Would be much cleaner.
+~~Would be much cleaner.~~
