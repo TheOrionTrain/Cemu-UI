@@ -34,7 +34,7 @@
 }
 #navigation {
     position: absolute;
-    z-index: 10;
+    z-index: 8;
     top: 0;
     left: 0;
     width: 1280px;
@@ -224,4 +224,56 @@ h2 {
 }
 #background, #game-icon {
     transition: background 100ms ease-in 50ms;
+}
+#settings-container {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 1280px;
+    width: 1280px;
+    height: 720px;
+    transition: 1s;
+    background: #262626;
+    transition: 1s;
+    opacity: 0;
+}
+#settings-container.center {
+    left: 0;
+    opacity: 1;
+}
+h3 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 50px;
+}
+#settings-container .settings {
+    position: absolute;
+    top: 180px;
+    left: 50px;
+    color: #fff;
+    font-size: 18px;
+    width: 1180px;
+}
+
+.setting {
+    padding: 0 0 60px;
+}
+
+.setting tr td:first-of-type {
+    font-size: 20px;
+    font-weight: 400;
+    width: 300px;
+}
+
+.setting tr:first-of-type td {
+    font-size: 32px;
+    font-weight: 300;
+    padding: 0 0 20px;
 }
