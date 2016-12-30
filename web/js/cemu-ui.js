@@ -13,8 +13,8 @@ var cemu = {
         $('[data-setting="theme"]').text("Dark");
         $('[data-setting="background"]').text("On Hover");
         if(app) {
-            $('[data-setting="game-dir"]').text(Settings.gameDirectory);
-            $('[data-setting="cemu-dir"]').text(Settings.cemuDirectory);
+            $('[data-setting="game-dir"]').text(Settings.gamesDir);
+            $('[data-setting="cemu-dir"]').text(Settings.cemuDir);
             $('.game').dblclick(function() {
                 app.launchGame($(this).attr('data-game-id'));
             });
