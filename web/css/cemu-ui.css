@@ -170,9 +170,9 @@ h2 {
     width: 10%;
 }
 .game .name {
-    width: 50%;
+    width: 45%;
 }
-.game .flag, .game .lastplayed, .game.status {
+.game .flag, .game .lastplayed, .game.status .game.compat {
     width: 20%;
 }
 .game:hover td, .game.selected td {
