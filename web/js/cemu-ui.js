@@ -38,4 +38,11 @@ var cemu = {
 
 $(document).ready(function() {
     cemu.initialize();
+	if(window.console && console.log){
+        var old = console.log;
+        console.log = function(){
+            old.apply(this, arguments);
+			Logger.log(arguments[0].toString(), "Main");
+        }
+	}
 });
