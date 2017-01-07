@@ -7,7 +7,7 @@ var cemu = {
             $('#settings-container').addClass('center');
         });
         $('.game').hover(function() {
-            cemu.select({'game':$(this).attr('data-game-id'), 'titleId':(this).attr('data-title-id')});
+            cemu.select({game:$(this).attr('data-game-id'), titleId:(this).attr('data-title-id')});
             $(this).addClass('selected');
         });
         $('[data-setting="theme"]').text("Dark");
@@ -20,7 +20,7 @@ var cemu = {
             });
             $('#launch').click(function() {
                 app.launchGame(cemu.selected);
-				Events.OnGameLaunched(current.game);
+				Events.onGameLaunched(cemu.selected);
             });
         }
     },
@@ -33,7 +33,7 @@ var cemu = {
             $('#game-playtime').text(app.getTimePlayed(current.game));
             $('#game-lastplayed').text(app.getLastPlayed(current.game));
             $('.game').removeClass('selected');
-			Events.OnGameSelected(current.game, current.titleId);
+			Events.onGameSelected(current.game, current.titleId);
         }
     }
 };
