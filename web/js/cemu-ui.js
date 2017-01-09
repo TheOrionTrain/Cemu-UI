@@ -19,14 +19,14 @@ var cemu = {
                 app.launchGame($(this).attr('data-game-id'));
             });
             $('#launch').click(function() {
-                app.launchGame(cemu.selected);
-				Events.onGameLaunched(cemu.selected);
+                app.launchGame(cemu.selected.game);
+				Events.onGameLaunched(cemu.selected.game);
             });
         }
     },
     select: function(current) {
-        if (current.game != cemu.selected && app) {
-            cemu.selected = current.game;
+        if (current != cemu.selected && app) {
+            cemu.selected = current;
             $('#background').css('background-image', 'url("img/background/' + app.getPicture(current.game) + '.jpg")');
             $('#game-icon').css('background-image', 'url("img/icon/' + app.getPicture(current.game) + '.png")');
             $('h2').text(app.getName(current.game));
