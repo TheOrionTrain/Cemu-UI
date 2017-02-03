@@ -10,8 +10,6 @@ var cemu = {
             cemu.select({game:$(this).attr('data-game-id'), titleId:(this).attr('data-title-id')});
             $(this).addClass('selected');
         });
-        //$('[data-setting="theme"]').text("Dark");
-        //$('[data-setting="background"]').text("On Hover");
         if(typeof app != "undefined") {
             $('[data-setting="game-dir"]').text(Settings.gamesDir);
             $('[data-setting="cemu-dir"]').text(Settings.cemuDir);
