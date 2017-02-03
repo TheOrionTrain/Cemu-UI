@@ -2,6 +2,7 @@
     font-family: 'Open Sans';
     font-weight: 300;
     box-sizing: border-box;
+    color: #fff;
     backface-visibility: hidden;
 }
 * ::-webkit-scrollbar {
@@ -23,30 +24,23 @@
         opacity: 1;
     }
 }
-#cemu-ui {
-    position: absolute;;
+.fullscreen {
+    position: absolute;
     top: 0;
     left: 0;
     overflow: hidden;
     width: 100vw;
     height: 100vh;
+}
+#cemu-ui {
     background: #ededed;
 }
 #navigation {
-    position: absolute;
     z-index: 8;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
     transition: 1s;
     background: #262626;
 }
 #navigation.top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
     height: 20vh;
     background: transparent;
 }
@@ -63,7 +57,6 @@ h1 {
     transition: 1s;
     transform: translateY(28vh);
     text-align: center;
-    color: #fff;
 }
 h1 span {
     font-size: 2vh;
@@ -88,8 +81,7 @@ h1 span {
     transition: 1s;
     text-align: center;
     text-decoration: none;
-    color: #fff;
-    border-radius: 0.75vw;
+    border-radius: .75vw;
 }
 #navigation #directory {
     left: 33vw;
@@ -103,8 +95,8 @@ h1 span {
     width: 3vh;
     max-width: 1.7vw;
     height: 3vh;
-    margin-right: 0.4vw;
-    vertical-align: -0.5vh;
+    margin-right: .4vw;
+    vertical-align: -.5vh;
 }
 #navigation.top #directory {
     top: 7vh;
@@ -137,14 +129,12 @@ h2 {
     font-size: 2.77vh;
     height: 7.64vh;
     margin: 2.77vh 0;
-    color: #fff;
 }
 #game-info span {
     font-size: 1.8vh;
     font-weight: 400;
     display: block;
-    margin: 0 0 0.7vh;
-    color: #fff;
+    margin: 0 0 .7vh;
 }
 #games-container {
     position: absolute;
@@ -164,8 +154,7 @@ h2 {
     padding: 1.4vh 1.17vw;
     transition: .4s;
     vertical-align: middle;
-    color: #fff;
-    border-top: 0.139vh solid rgba(255, 255, 255, .15);
+    border-top: .139vh solid rgba(255, 255, 255, .15);
 }
 .game .icon {
     width: 10%;
@@ -187,7 +176,7 @@ h2 {
 .game .flag img {
     width: 5.55vh;
     height: 5.55vh;
-    margin: 0 0.78vw 0 0;
+    margin: 0 .78vw 0 0;
     vertical-align: -1.8vh;
 }
 #launch {
@@ -200,103 +189,77 @@ h2 {
     transition: 1s;
     text-align: center;
     text-decoration: none;
-    color: #fff;
-    border-radius: 0.75vw;
+    border-radius: .75vw;
     background: #00acd2;
 }
 #background {
-    position: absolute;
     z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
     background: url('../img/background/Hyrule Warriors.jpg') no-repeat center/cover #262626;
-    filter: blur(0.4vh);
+    filter: blur(.4vh);
 }
 #cemu-ui .container {
-    position: absolute;
     z-index: 2;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
     background: rgba(30, 30, 30, .45);
 }
 #background, #game-icon {
     transition: background 100ms ease-in 50ms;
 }
 #settings-container {
-    position: absolute;
     z-index: 10;
-    top: 0;
     left: 100vw;
-    width: 100vw;
-    height: 100vh;
     transition: 1s;
-    background: #262626;
     opacity: 0;
+    background: #262626;
 }
 #settings-container.center {
     left: 0;
     opacity: 1;
 }
 h3 {
+    font-size: 6.94vh;
+    font-weight: 300;
+    line-height: 6.94vh;
     position: absolute;
     top: 6.94vh;
     left: 3.9vw;
     margin: 0;
     padding: 0;
     text-align: center;
-    color: #fff;
-    font-size: 6.94vh;
-    font-weight: 300;
-    line-height: 6.94vh;
 }
 #settings-container .settings {
+    font-size: 2.5vh;
     position: absolute;
     top: 25vh;
     left: 3.9vw;
-    color: #fff;
-    font-size: 2.5vh;
     width: 92.2vw;
 }
-
 .setting {
     padding: 0 0 8.33vh;
 }
-
+.setting tr td {
+    width: 23vw;
+}
 .setting tr td:first-of-type {
     font-size: 2.78vh;
     font-weight: 400;
-    width: 23.44vw;
 }
-
 .setting tr:first-of-type td {
     font-size: 4.44vh;
     font-weight: 300;
     padding: 0 0 2.78vh;
 }
-
-.setting tr:nth-last-of-type(2) td {
-    width: 23.44vw;
-}
-
 .setting td select {
+    font-size: 2.5vh;
     width: 100%;
-    font-size: 2.5vh;
-    color: #fff;
-    background: #111;
-    border-radius: 0.75vw;
-    padding: 0.7vh;
-    outline: 0;
+    padding: .7vh;
     border: none;
-}
-
-[data-setting="game-dir"], [data-setting="cemu-dir"] {
-    font-size: 2.5vh;
-    color: #fff;
+    border-radius: .6vw;
+    outline: 0;
     background: #111;
-    border-radius: 0.75vw;
-    padding: 0.7vh;
+}
+[data-setting='game-dir'], [data-setting='cemu-dir'] {
+    font-size: 2.5vh;
+    padding: .7vh;
+    border-radius: .6vw;
+    background: #111;
 }
