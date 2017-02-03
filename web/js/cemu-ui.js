@@ -10,9 +10,9 @@ var cemu = {
             cemu.select({game:$(this).attr('data-game-id'), titleId:(this).attr('data-title-id')});
             $(this).addClass('selected');
         });
-        $('[data-setting="theme"]').text("Dark");
-        $('[data-setting="background"]').text("On Hover");
-        if(app) {
+        //$('[data-setting="theme"]').text("Dark");
+        //$('[data-setting="background"]').text("On Hover");
+        if(typeof app != "undefined") {
             $('[data-setting="game-dir"]').text(Settings.gamesDir);
             $('[data-setting="cemu-dir"]').text(Settings.cemuDir);
             $('.game').dblclick(function() {
@@ -22,10 +22,13 @@ var cemu = {
                 app.launchGame(cemu.selected.game);
 				Events.onGameLaunched(cemu.selected.game);
             });
+        } else {
+            $('[data-setting="cemu-dir"]').text("/etc/cemu");
+            $('[data-setting="game-dir"]').text("/home/thefeeltrain/Desktop/games");
         }
     },
     select: function(current) {
-        if (current != cemu.selected && app) {
+        if (current != cemu.selected && typeof app != "undefined") {
             cemu.selected = current;
             $('#background').css('background-image', 'url("img/background/' + app.getPicture(current.game) + '.jpg")');
             $('#game-icon').css('background-image', 'url("img/icon/' + app.getPicture(current.game) + '.png")');
