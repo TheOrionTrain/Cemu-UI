@@ -8,7 +8,7 @@
 - Favorites
 - Search
 - Sort by Name/Region/Etc
-- Get Cemu version
+- ~~Get Cemu version~~
 - Controller Support
 - Super Mario Maker Level Browser/Downloader
 
