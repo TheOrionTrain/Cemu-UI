@@ -277,3 +277,18 @@ h3 {
     font-weight: 300;
     padding: 0 0 20px;
 }
+
+.setting tr:nth-last-of-type(2) td {
+    width: 300px;
+}
+
+.setting td select {
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+    background: #111;
+    border-radius: 6px;
+    padding: 5px;
+    outline: 0;
+    border: none;
+}
