@@ -23,6 +23,12 @@ var cemu = {
             if (exe) {
                 $('[data-setting="game-dir"]').text(Settings.gamesDir);
                 $('[data-setting="cemu-dir"]').text(Settings.cemuDir);
+                $('[data-setting="game-dir"]').click(function() {
+                    $(this).text(app.chooseGameFolder());
+                });
+                $('[data-setting="cemu-dir"]').click(function() {
+                    $(this).text(app.chooseCemuDirectory());
+                });
                 $('.game').dblclick(function() {
                     app.launchGame($(this).attr('data-game-id'));
                 });

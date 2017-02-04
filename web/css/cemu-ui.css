@@ -263,3 +263,8 @@ h3 {
     border-radius: .6vw;
     background: #111;
 }
+
+.setting td select:hover, [data-setting='game-dir']:hover, [data-setting='cemu-dir']:hover {
+    background: #1a1a1a;
+    cursor: pointer;
+}
