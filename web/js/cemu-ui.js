@@ -63,6 +63,7 @@ var cemu = {
     old = console.log;
 
 $(document).ready(function() {
+	Controller.bind();
     cemu.initialize();
     if (window.console && console.log) {
         console.log = function() {
