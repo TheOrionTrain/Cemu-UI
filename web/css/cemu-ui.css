@@ -229,34 +229,74 @@ h3 {
 #settings-container .settings {
     border-radius: .6vw;
     font-size: 2.5vh;
-    position: relative;
-    top: 22vh;
-    left: 4vw;
-    width: 56vw;
-    height: 70vh;
-    padding: 5vh 5vw;
-    /* background: rgba(0,0,0,0.1); */
-}
-#settings-container .plugins {
-    font-size: 2.5vh;
     position: absolute;
-    top: 22vh;
-    right: 4vw;
-    width: 32vw;
-    height: 70vh;
+    top: 28vh;
+    left: 4vw;
+    width: 92vw;
+    height: 65vh;
     padding: 5vh 5vw;
-    border-radius: .6vw;
-    /* background: rgba(0,0,0,0.1); */
+    display: none;
 }
-.plugin {
+
+#settings-container .nav {
+    position: absolute;
+    top: 20vh;
+    left: 4vw;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#settings-container .nav li {
+    display: inline-block;
+    margin-right: 2vw;
+    font-size: 3vh;
+    opacity: 0.667;
+}
+
+#settings-container .nav li:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#settings-container .nav li.on {
+    font-weight: 400;
+    opacity: 1;
+}
+
+#settings-container .settings#directories {
+    display: block;
+}
+
+.plugins > .plugin {
     font-size: 2.5vh;
     width: 100%;
-    margin: .18vh 0;
-    padding: .75vh .5vw;
+    margin: .5vh 0;
     border: none;
-    border-radius: .6vw;
     outline: 0;
+    border-radius: .6vw;
     background: rgba(0, 0, 0, .2);
+}
+
+.plugins > .plugin span {
+    display: inline-block;
+    padding: 1vh 1vw;
+    vertical-align: middle;
+}
+
+.plugin span.name {
+    width: 18%;
+}
+.plugin span.author {
+    width: 20%;
+}
+.plugin span.description {
+    width: 55%;
+    font-size: 2.25vh;
+}
+.plugin span.check {
+    text-align: center;
+    width: 5%;
 }
 .plugin input {
     float: right;
@@ -275,11 +315,12 @@ h3 {
     font-size: 2.75vh;
     font-weight: 400;
 }
-.setting tr.title td, .plugins h4 {
-    font-size: 4.5vh;
+.setting tr.title td, .plugins .title {
+    font-size: 5vh;
     font-weight: 300;
     margin: 0;
-    padding: 5vh 0 1.5vh;
+    padding: 0 0 5vh;
+    background: transparent;
 }
 .setting td select {
     font-size: 2.5vh;

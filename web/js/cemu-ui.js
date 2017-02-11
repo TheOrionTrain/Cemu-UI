@@ -20,12 +20,12 @@ var cemu = {
                     Settings.save(s, $(this).val());
                 }
             });
-            $('.plugin').click(function() {
-                if($(this).children('input').attr('checked') == "checked") {
-                    $(this).children('input').removeAttr('checked');
-                } else {
-                    $(this).children('input').attr('checked', "checked");
-                }
+            $('#settings-container .nav li').click(function() {
+                old($(this).text().toLowerCase());
+                $('.settings').hide();
+                $('#'+$(this).text().toLowerCase()).show();
+                $('#settings-container .nav li').removeClass('on');
+                $(this).addClass('on');
             });
             if (exe) {
                 $('[data-setting="game-dir"]').text(Settings.gamesDir);
