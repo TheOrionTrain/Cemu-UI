@@ -20,6 +20,13 @@ var cemu = {
                     Settings.save(s, $(this).val());
                 }
             });
+            $('.plugin').click(function() {
+                if($(this).children('input').attr('checked') == "checked") {
+                    $(this).children('input').removeAttr('checked');
+                } else {
+                    $(this).children('input').attr('checked', "checked");
+                }
+            });
             if (exe) {
                 $('[data-setting="game-dir"]').text(Settings.gamesDir);
                 $('[data-setting="cemu-dir"]').text(Settings.cemuDir);
