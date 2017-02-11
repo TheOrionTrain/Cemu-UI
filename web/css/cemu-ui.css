@@ -38,7 +38,7 @@
 #navigation {
     z-index: 8;
     transition: 1s;
-    background: #262626;
+    background: #1d1d1d;
 }
 #navigation.top {
     height: 20vh;
@@ -89,7 +89,7 @@ h1 span {
 }
 #navigation #settings {
     right: 33vw;
-    background: #444;
+    background: rgba(255, 255, 255, .075);
 }
 #settings img {
     width: 3vh;
@@ -209,62 +209,94 @@ h2 {
     left: 100vw;
     transition: 1s;
     opacity: 0;
-    background: #262626;
+    background: #1d1d1d;
 }
 #settings-container.center {
     left: 0;
     opacity: 1;
 }
 h3 {
-    font-size: 6.94vh;
+    font-size: 7vh;
     font-weight: 300;
-    line-height: 6.94vh;
+    line-height: 7vh;
     position: absolute;
-    top: 6.94vh;
-    left: 3.9vw;
+    top: 7vh;
+    left: 4vw;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 #settings-container .settings {
+    border-radius: .6vw;
+    font-size: 2.5vh;
+    position: relative;
+    top: 22vh;
+    left: 4vw;
+    width: 56vw;
+    height: 70vh;
+    padding: 5vh 5vw;
+    /* background: rgba(0,0,0,0.1); */
+}
+#settings-container .plugins {
     font-size: 2.5vh;
     position: absolute;
-    top: 25vh;
-    left: 3.9vw;
-    width: 92.2vw;
+    top: 22vh;
+    right: 4vw;
+    width: 32vw;
+    height: 70vh;
+    padding: 5vh 5vw;
+    border-radius: .6vw;
+    /* background: rgba(0,0,0,0.1); */
+}
+.plugin {
+    font-size: 2.5vh;
+    width: 100%;
+    margin: .18vh 0;
+    padding: .75vh .5vw;
+    border: none;
+    border-radius: .6vw;
+    outline: 0;
+    background: rgba(0, 0, 0, .2);
+}
+.plugin input {
+    float: right;
+    width: 2.5vh;
+    height: 2.5vh;
+    margin: .5vh;
 }
 .setting {
-    padding: 0 0 8.33vh;
+    width: 100%;
+    padding: 0 0 8vh;
 }
 .setting tr td {
-    width: 23vw;
+    width: 50%;
 }
 .setting tr td:first-of-type {
-    font-size: 2.78vh;
+    font-size: 2.75vh;
     font-weight: 400;
 }
-.setting tr:first-of-type td {
-    font-size: 4.44vh;
+.setting tr.title td, .plugins h4 {
+    font-size: 4.5vh;
     font-weight: 300;
-    padding: 0 0 2.78vh;
+    margin: 0;
+    padding: 5vh 0 1.5vh;
 }
 .setting td select {
     font-size: 2.5vh;
     width: 100%;
-    padding: .7vh;
+    padding: .75vh .5vw;
     border: none;
     border-radius: .6vw;
     outline: 0;
-    background: #111;
+    background: rgba(0, 0, 0, .2);
 }
 [data-setting='game-dir'], [data-setting='cemu-dir'] {
     font-size: 2.5vh;
-    padding: .7vh;
+    padding: .75vh .5vw;
     border-radius: .6vw;
-    background: #111;
+    background: rgba(0, 0, 0, .2);
 }
-
-.setting td select:hover, [data-setting='game-dir']:hover, [data-setting='cemu-dir']:hover {
-    background: #1a1a1a;
+.setting td select:hover, [data-setting='game-dir']:hover, [data-setting='cemu-dir']:hover, .plugin:hover {
     cursor: pointer;
+    background: #101010;
 }
