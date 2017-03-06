@@ -341,3 +341,11 @@ h3 {
     cursor: pointer;
     background: #101010;
 }
+.controller {
+    width: 100%;
+    height: 30vh;
+    background-image: url(../controllers/black-xb1/base.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
