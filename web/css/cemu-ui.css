@@ -234,7 +234,7 @@ h3 {
     left: 4vw;
     width: 92vw;
     height: 65vh;
-    padding: 5vh 5vw;
+    padding: 3vh 5vw;
     display: none;
 }
 
@@ -306,7 +306,7 @@ h3 {
 }
 .setting {
     width: 100%;
-    padding: 0 0 8vh;
+    /* padding: 0 0 8vh; */
 }
 .setting tr td {
     width: 50%;
@@ -343,7 +343,7 @@ h3 {
 }
 .controller {
     width: 100%;
-    height: 30vh;
+    height: 43vh;
     background-image: url(../controllers/black-xb1/base.svg);
     background-size: contain;
     background-position: center;
