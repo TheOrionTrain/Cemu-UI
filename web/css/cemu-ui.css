@@ -352,16 +352,18 @@ h3 {
 .controller .stick {
     position: absolute;
     background: url(../controllers/black-xb1/stick.svg);
-    background-position: -85px 0;
-    height: 83px;
-    width: 84px;
+    background-position: -3.5vw 0;
+	background-size: contain;
+    background-repeat: no-repeat;
+    height: 7vh;
+    width: 7vw;
 }
 .controller .stick.pressed {
     background-position: 0 0;
 }
 .controller .stick.left {
-    top: 38.9vh;
-    left: 60.5vh;
+    top: 40.47vh;
+    left: 37.26vw;
 }
 .controller .stick.right {
     top: 113px;
