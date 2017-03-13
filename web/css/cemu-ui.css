@@ -349,3 +349,21 @@ h3 {
     background-position: center;
     background-repeat: no-repeat;
 }
+.controller .stick {
+    position: absolute;
+    background: url(../controllers/black-xb1/stick.svg);
+    background-position: -85px 0;
+    height: 83px;
+    width: 83px;
+}
+.controller .stick.pressed {
+    background-position: 0 0;
+}
+.controller .stick.left {
+    top: 38.9vh;
+    left: 60.5vh;
+}
+.controller .stick.right {
+    top: 113px;
+    left: 288px;
+}
