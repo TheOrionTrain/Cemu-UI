@@ -1,6 +1,6 @@
 var Controllers = [];
 
-var x = 0, y = 0;
+var lx = 0, ly = 0, rx = 0, ry = 0;
 
 var Controller = {
     "bind": function() {
@@ -77,7 +77,7 @@ var Controller = {
 				$('.stick.left').css({'margin-left' : x + 'px', 'margin-top' : y + 'px', 'transform' : 'rotateX(' + y  * -1 + 'deg) rotateY(' + x + 'deg)'});
 				switch (e.axis) {
 					case "LEFT_STICK_Y":
-						y = e.value * 22;
+						ly = e.value * 22;
 						if (e.value == 1) {
 							$('tr.selected').next().mouseenter();//console.log("Move down.");
 							$('#games-container').scrollTo($('tr.selected'));
@@ -87,7 +87,13 @@ var Controller = {
 						}
 					break;
 					case "LEFT_STICK_X":
-						x = e.value * 22;
+						lx = e.value * 22;
+					break;
+					case "RIGHT_STICK_Y":
+						ry = e.value * 22;
+					break;
+					case "RIGHT_STICK_X":
+						rx = e.value * 22;
 					break;
 				}
 			}

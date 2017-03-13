@@ -354,7 +354,7 @@ h3 {
     background: url(../controllers/black-xb1/stick.svg);
     background-position: -85px 0;
     height: 83px;
-    width: 83px;
+    width: 84px;
 }
 .controller .stick.pressed {
     background-position: 0 0;
