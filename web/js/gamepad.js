@@ -1,5 +1,7 @@
 var Controllers = [];
 
+var x = 0, y = 0;
+
 var Controller = {
     "bind": function() {
         window.gamepad = new Gamepad();
@@ -66,13 +68,16 @@ var Controller = {
 		});
 
         gamepad.bind(Gamepad.Event.AXIS_CHANGED, function(e) {
+			console.log($('#navigation').hasClass('top'));
 			if (!app.isInFocus() && $('#navigation').hasClass('top'))
 				return;
 			if (e.gamepad.name.includes($('[data-setting="controller"] select').val())) {
 				//do everything in here
-				//console.log(e);
+				console.log('rotateX(' + x  * -1 + 'deg) rotateY(' + y + 'deg)');
+				$('.stick.left').css({'margin-left' : x + 'px', 'margin-top' : y + 'px', 'transform' : 'rotateX(' + y  * -1 + 'deg) rotateY(' + x + 'deg)'});
 				switch (e.axis) {
 					case "LEFT_STICK_Y":
+						y = e.value * 22;
 						if (e.value == 1) {
 							$('tr.selected').next().mouseenter();//console.log("Move down.");
 							$('#games-container').scrollTo($('tr.selected'));
@@ -80,6 +85,9 @@ var Controller = {
 							$('tr.selected').prev().mouseenter();//console.log("Move up.");
 							$('#games-container').scrollTo($('tr.selected'));
 						}
+					break;
+					case "LEFT_STICK_X":
+						x = e.value * 22;
 					break;
 				}
 			}
