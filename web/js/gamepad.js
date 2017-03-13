@@ -68,8 +68,8 @@ var Controller = {
 		});
 
         gamepad.bind(Gamepad.Event.AXIS_CHANGED, function(e) {
-			console.log($('#navigation').hasClass('top'));
-			if (!app.isInFocus() && $('#navigation').hasClass('top'))
+			console.log(!app.isInFocus() || !$('#navigation').hasClass('top'));
+			if (!app.isInFocus())
 				return;
 			if (e.gamepad.name.includes($('[data-setting="controller"] select').val())) {
 				//do everything in here
@@ -78,12 +78,14 @@ var Controller = {
 				switch (e.axis) {
 					case "LEFT_STICK_Y":
 						ly = e.value * 22;
-						if (e.value == 1) {
-							$('tr.selected').next().mouseenter();//console.log("Move down.");
-							$('#games-container').scrollTo($('tr.selected'));
-						} else if (e.value == -1) {
-							$('tr.selected').prev().mouseenter();//console.log("Move up.");
-							$('#games-container').scrollTo($('tr.selected'));
+						if ($('#navigation').hasClass('top')) {
+							if (e.value == 1) {
+								$('tr.selected').next().mouseenter();//console.log("Move down.");
+								$('#games-container').scrollTo($('tr.selected'));
+							} else if (e.value == -1) {
+								$('tr.selected').prev().mouseenter();//console.log("Move up.");
+								$('#games-container').scrollTo($('tr.selected'));
+							}
 						}
 					break;
 					case "LEFT_STICK_X":
