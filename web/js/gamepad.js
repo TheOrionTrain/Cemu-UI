@@ -73,8 +73,8 @@ var Controller = {
 				return;
 			if (e.gamepad.name.includes($('[data-setting="controller"] select').val())) {
 				//do everything in here
-				console.log('rotateX(' + x  * -1 + 'deg) rotateY(' + y + 'deg)');
-				$('.stick.left').css({'margin-left' : x + 'px', 'margin-top' : y + 'px', 'transform' : 'rotateX(' + y  * -1 + 'deg) rotateY(' + x + 'deg)'});
+				console.log('rotateX(' + lx  * -1 + 'deg) rotateY(' + ly + 'deg)');
+				$('.stick.left').css({'margin-left' : lx + 'px', 'margin-top' : ly + 'px', 'transform' : 'rotateX(' + ly  * -1 + 'deg) rotateY(' + lx + 'deg)'});
 				switch (e.axis) {
 					case "LEFT_STICK_Y":
 						ly = e.value * 22;
