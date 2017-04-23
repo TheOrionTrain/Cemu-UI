@@ -342,30 +342,32 @@ h3 {
     background: #101010;
 }
 .controller {
-    width: 100%;
+    width: 51vh;
     height: 43vh;
     background-image: url(../controllers/black-xb1/base.svg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
+    margin: auto;
 }
 .controller .stick {
     position: absolute;
     background: url(../controllers/black-xb1/stick.svg);
-    background-position: -3.5vw 0;
-	background-size: contain;
+    background-position: -7vh 0;
+    background-size: 14vh;
     background-repeat: no-repeat;
     height: 7vh;
-    width: 7vw;
+    width: 7vh;
 }
 .controller .stick.pressed {
     background-position: 0 0;
 }
 .controller .stick.left {
-    top: 40.47vh;
-    left: 37.26vw;
+    top: 36.5%;
+    left: 18.1%;
 }
 .controller .stick.right {
-    top: 113px;
-    left: 288px;
+    top: 54.5%;
+    left: 56.3%;
 }
