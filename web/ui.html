@@ -1,91 +1,107 @@
 <!doctype HTML>
 <html>
-    <head>
-        <title>Cemu</title>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-        <link rel="stylesheet" href="css/cemu-ui.css">
-        <script src="js/jquery.min.js"></script>
-        <script src="js/cemu-ui.js"></script>
-		<script src="js/gamepad.js"></script>
-		<script src="js/gamepad.min.js"></script>
-		<script src="js/jquery.scrollTo.js"></script>
-    </head>
-    <body>
-        <div id="cemu-ui" class="fullscreen">
-            <div id="background" class="fullscreen"></div>
-            <div class="container fullscreen">
-                <div id="navigation" class="fullscreen">
-                    <h1>Cemu <span>1.6.3</span></h1>
-                    <a id="directory">Game Directory</a>
-                    <a id="settings"><img src="img/settings.svg"> Settings</a>
-                </div>
-                <div id="games-container">
-                    <table id="games"></table>
-                </div>
-                <div id="game-info">
-                    <div id="game-icon"></div>
-                    <h2></h2>
-                    <span id="game-playtime"></span>
-                    <span id="game-lastplayed"></span>
-                    <a id="launch">Launch Game</a>
-                </div>
+
+<head>
+    <title>Cemu</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/cemu-ui.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/cemu-ui.js"></script>
+    <script src="js/gamepad.js"></script>
+    <script src="js/gamepad.min.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+</head>
+
+<body>
+    <div id="cemu-ui" class="fullscreen">
+        <div id="background" class="fullscreen"></div>
+        <div class="container fullscreen">
+            <div id="navigation" class="fullscreen">
+                <h1>Cemu <span>0.0.0</span></h1>
+                <a id="directory">Game Directory</a>
+                <a id="settings"><img src="img/settings.svg"> Settings</a>
             </div>
-            <div id="settings-container" class="fullscreen">
-                <h3>Settings</h3>
-                <ul class="nav">
-                    <li class="on">Directories</li>
-                    <li>Interface</li>
-                    <li>Plugins</li>
-					<li>Input</li>
-                </ul>
-                <div class="settings" id="directories">
-                    <table class="setting">
-                        <tr class="title"><td colspan="2">Directories</td></tr>
-                        <tr>
-                            <td>Game Directory</td>
-                            <td data-setting="game-dir"></td>
-                        </tr>
-                        <tr>
-                            <td>Cemu Directory</td>
-                            <td data-setting="cemu-dir"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="settings" id="interface">
-                    <table class="setting">
-                        <tr class="title"><td colspan="2">Interface</td></tr>
-                        <tr>
-                            <td>Fullscreen</td>
-                            <td data-setting="fullscreen">
-                                <select>
-                                    <option>Windowed</option>
-                                    <option>Fullscreen</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Theme</td>
-                            <td data-setting="theme">
-                                <select>
-                                    <option>Dark</option>
-                                    <option>Light</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Background Changes</td>
-                            <td data-setting="background">
-                                <select>
-                                    <option>On Hover</option>
-                                    <option>On Click</option>
-                                    <option>Never</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="settings" id="plugins">
-                    <div class="plugins">
+            <div id="games-container">
+                <table id="games"></table>
+                <div id="games-tiled"></div>
+            </div>
+            <div id="game-info">
+                <div id="game-icon"></div>
+                <h2></h2>
+                <span id="game-playtime"></span>
+                <span id="game-lastplayed"></span>
+                <a id="launch">Launch Game</a>
+            </div>
+        </div>
+        <div id="settings-container" class="fullscreen">
+            <h3>Settings</h3>
+            <ul class="nav">
+                <li class="on">Directories</li>
+                <li>Interface</li>
+                <li>Plugins</li>
+                <li>Input</li>
+            </ul>
+            <div class="settings" id="directories">
+                <table class="setting">
+                    <tr class="title">
+                        <td colspan="2">Directories</td>
+                    </tr>
+                    <tr>
+                        <td>Game Directory</td>
+                        <td data-setting="game-dir"></td>
+                    </tr>
+                    <tr>
+                        <td>Cemu Directory</td>
+                        <td data-setting="cemu-dir"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="settings" id="interface">
+                <table class="setting">
+                    <tr class="title">
+                        <td colspan="2">Interface</td>
+                    </tr>
+                    <tr>
+                        <td>Fullscreen</td>
+                        <td data-setting="fullscreen">
+                            <select>
+                                <option>Windowed</option>
+                                <option>Fullscreen</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Theme</td>
+                        <td data-setting="theme">
+                            <select>
+                                <option>Dark</option>
+                                <option>Light</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Layout</td>
+                        <td data-setting="layout">
+                            <select>
+                                <option>Table</option>
+                                <option>Tiled</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Background Changes</td>
+                        <td data-setting="background">
+                            <select>
+                                <option>On Hover</option>
+                                <option>On Click</option>
+                                <option>Never</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="settings" id="plugins">
+                <div class="plugins">
                     <div class="title">Plugins</div>
                     <div class="plugin">
                         <span class="name">Citra</span>
@@ -107,9 +123,11 @@
                     </div>
                 </div>
             </div>
-			<div class="settings" id="input">
+            <div class="settings" id="input">
                 <table class="setting">
-                    <tr class="title"><td colspan="2">Input</td></tr>
+                    <tr class="title">
+                        <td colspan="2">Input</td>
+                    </tr>
                     <tr>
                         <td>Controller</td>
                         <td data-setting="controller">
@@ -118,15 +136,16 @@
                             </select>
                         </td>
                     </tr>
-					<tr>
-						<td>Keybindings</td>
-					</tr>
+                    <tr>
+                        <td>Keybindings</td>
+                    </tr>
                 </table>
                 <div class="controller">
-					<div class="stick left" data-name="stick-1"></div>
-					<div class="stick right" data-name="stick-2"></div>
-				</div>
+                    <div class="stick left" data-name="stick-1"></div>
+                    <div class="stick right" data-name="stick-2"></div>
+                </div>
             </div>
         </div>
-    </body>
+</body>
+
 </html>

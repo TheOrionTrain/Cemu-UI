@@ -36,7 +36,7 @@ var cemu = {
                 $('[data-setting="cemu-dir"]').click(function() {
                     $(this).text(app.chooseCemuDirectory());
                 });
-                $('.game').dblclick(function() {
+                $('.game, #games-tiled img').dblclick(function() {
                     app.launchGame($(this).attr('data-game-id'));
                 });
                 $('#launch').click(function() {
@@ -50,6 +50,10 @@ var cemu = {
                         $(this).val(l);
                 });
             } else {
+                var games = ["ALZE01","ALZE01","ALZE01","ALZE01","ALZE01","ALZE01","ALZE01","ALZE01"]; // For testing purposes
+                for(var i=0; i < games.length; i++) {
+                    $('<img src="http://art.gametdb.com/wiiu/coverHQ/US/'+games[i]+'.jpg">').appendTo('#games-tiled');
+                }
                 $('[data-setting="cemu-dir"]').text("/etc/cemu");
                 $('[data-setting="game-dir"]').text("/home/thefeeltrain/Desktop/games");
             }
