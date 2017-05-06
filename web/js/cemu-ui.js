@@ -10,10 +10,16 @@ var cemu = {
             $('.game').hover(function() {
                 cemu.select({
                     game: $(this).attr('data-game-id'),
-                    titleId: (this).attr('data-title-id')
+                    titleId: $(this).attr('data-title-id')
                 });
                 $(this).addClass('selected');
             });
+			$('#games-tiled img').hover(function() {
+				cemu.select({
+					game: $($('#games tr')[$(this).index()]).attr('data-game-id'),
+					titleId: $($('#games tr')[$(this).index()]).attr('data-title-id'),
+				});
+			});
             $('[data-setting] > select').change(function() {
                 var s = $(this).parents('td').attr('data-setting');
                 if (exe) {
@@ -28,6 +34,10 @@ var cemu = {
                 $(this).addClass('on');
             });
             if (exe) {
+				if (JSON.parse(Settings.extra).layout == "Tiled") {
+					$('#games').hide();
+					$('#games-tiled').show();
+				}
                 $('[data-setting="game-dir"]').text(Settings.gamesDir);
                 $('[data-setting="cemu-dir"]').text(Settings.cemuDir);
                 $('[data-setting="game-dir"]').click(function() {
@@ -46,7 +56,7 @@ var cemu = {
                 $('[data-setting] > select').each(function() {
                     var s = $(this).parents('td').attr('data-setting'),
                         l = Settings.load(s);
-                    if (l != null)
+                    if (l != null && l != "")
                         $(this).val(l);
                 });
             } else {
