@@ -387,3 +387,140 @@ h3 {
     top: 54.5%;
     left: 56.3%;
 }
+
+.controller .button {
+    position: absolute;
+    background: url(../controllers/black-xb1/abxy.svg);
+    background-size: 14vh;
+    background-repeat: no-repeat;
+    height: 3.4vh;
+    width: 3.4vh;
+}
+
+.controller .button.a {
+    top: 48.5%;
+    left: 72.2%;
+    background-position: 0 0;
+}
+
+.controller .button.b {
+    top: 40.6%;
+    left: 79%;
+    background-position: -3.5vh 0;
+}
+
+.controller .button.x {
+    top: 40.6%;
+    left: 65.4%;
+    background-position: -7vh 0;
+}
+
+.controller .button.y {
+    top: 32.5%;
+    left: 72.2%;
+    background-position: -10.5vh 0;
+}
+
+.controller .button.pressed {
+    background-position-y: -3.5vh;
+}
+
+.controller .trigger {
+    position: absolute;
+    background: url(../controllers/black-xb1/trigger.svg);
+    background-size: 6vh;
+    background-repeat: no-repeat;
+    height: 9vh;
+    width: 6vh;
+    top: 0.25%;
+}
+
+.controller .trigger.left {
+    left: 20%;
+}
+
+.controller .trigger.right {
+    transform: scaleX(-1);
+    right: 20%;
+}
+
+.controller .bumper {
+    position: absolute;
+    background: url(../controllers/black-xb1/bumper.svg);
+    background-size: 11.5vh;
+    background-repeat: no-repeat;
+    height: 5vh;
+    width: 13vh;
+    top: 20.5%;
+}
+
+.controller .bumper.left {
+    left: 14.5%;
+}
+
+.controller .bumper.right {
+    transform: scaleX(-1);
+    right: 14.5%;
+}
+
+.controller .start {
+    position: absolute;
+    background: url(../controllers/black-xb1/start-select.svg);
+    background-size: 5vh;
+    background-repeat: no-repeat;
+    background-position: -2.5vh;
+    height: 2.5vh;
+    width: 2.5vh;
+    left: 55%;
+    top: 42%;
+}
+
+.controller .select {
+    position: absolute;
+    background: url(../controllers/black-xb1/start-select.svg);
+    background-size: 5vh;
+    background-repeat: no-repeat;
+    height: 2.5vh;
+    width: 2.5vh;
+    left: 40.6%;
+    top: 42%;
+}
+
+.controller .dpad {
+    position: absolute;
+    background: url(../controllers/black-xb1/dpad.svg);
+    background-size: 4vh;
+    background-repeat: no-repeat;
+}
+
+.controller .dpad.left {
+    top: 61.25%;
+    left: 30%;
+    background-position: 0vh -5.2vh;
+    height: 2vh;
+    width: 4vh;
+}
+
+.controller .dpad.right {
+    top: 61.5%;
+    left: 37.9%;
+    background-position: 0vh -3.2vh;
+    height: 2vh;
+    width: 4vh;
+}
+
+.controller .dpad.up {
+    top: 53.25%;
+    left: 35.1%;
+    background-position: -2vh 0.9vh;
+    height: 4vh;
+    width: 2vh;
+}
+
+.controller .dpad.down {
+    top: 63%;
+    left: 35.1%;
+    background-position: 0vh 0.8vh;
+    height: 4vh;
+    width: 2vh;
+}
