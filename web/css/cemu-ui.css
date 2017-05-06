@@ -433,6 +433,7 @@ h3 {
     height: 9vh;
     width: 6vh;
     top: 0.25%;
+    opacity: .25;
 }
 
 .controller .trigger.left {
@@ -452,6 +453,7 @@ h3 {
     height: 5vh;
     width: 13vh;
     top: 20.5%;
+    opacity: .25;
 }
 
 .controller .bumper.left {
@@ -473,6 +475,7 @@ h3 {
     width: 2.5vh;
     left: 55%;
     top: 42%;
+    opacity: .25;
 }
 
 .controller .select {
@@ -484,6 +487,7 @@ h3 {
     width: 2.5vh;
     left: 40.6%;
     top: 42%;
+    opacity: .25;
 }
 
 .controller .dpad {
@@ -491,6 +495,7 @@ h3 {
     background: url(../controllers/black-xb1/dpad.svg);
     background-size: 4vh;
     background-repeat: no-repeat;
+    opacity: .25;
 }
 
 .controller .dpad.left {
