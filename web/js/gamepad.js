@@ -25,7 +25,7 @@ var Controller = {
 				Controllers.forEach((controller) => $('[data-setting="controller"] select').append('<option>' + controller.name + '</option>'));
 			}
         });
-
+		
         gamepad.bind(Gamepad.Event.TICK, function(gamepads) {
 			
         });
@@ -34,6 +34,11 @@ var Controller = {
 			console.log(e.gamepad.id);
 			if (!app.isInFocus())
 				return;
+			if (e.control.includes("FACE") || e.control.includes("STICK"))
+				$('div[data-name="' + e.control + '"]').removeClass('pressed');
+			else
+				$('div[data-name="' + e.control + '"]').css('opacity', 0);
+				
 			if (e.gamepad.name.includes($('[data-setting="controller"] select').val())) {
 				//do everything in here
 				console.log(e);
@@ -62,8 +67,14 @@ var Controller = {
         });
 		
 		gamepad.bind(Gamepad.Event.BUTTON_DOWN, function(e) {
+			if (!app.isInFocus())
+				return;
 			if (e.gamepad.name.includes($('[data-setting="controller"] select').val())) {
 				//do everything in here
+				if (e.control.includes("FACE") || e.control.includes("STICK"))
+					$('div[data-name="' + e.control + '"]').addClass('pressed');
+				else
+					$('div[data-name="' + e.control + '"]').css('opacity', 1);
 			}
 		});
 
@@ -73,8 +84,15 @@ var Controller = {
 				return;
 			if (e.gamepad.name.includes($('[data-setting="controller"] select').val())) {
 				//do everything in here
-				console.log('rotateX(' + lx  * -1 + 'deg) rotateY(' + ly + 'deg)');
-				$('.stick.left').css({'margin-left' : lx + 'px', 'margin-top' : ly + 'px', 'transform' : 'rotateX(' + ly  * -1 + 'deg) rotateY(' + lx + 'deg)'});
+				//console.log('rotateX(' + lx  * -1 + 'deg) rotateY(' + ly + 'deg)');
+				if (e.axis.includes("STICK")) {
+					$('.stick.left').css({'margin-left' : lx + 'px', 'margin-top' : ly + 'px', 'transform' : 'rotateX(' + ly  * -1 + 'deg) rotateY(' + lx + 'deg)'});
+					$('.stick.right').css({'margin-left' : rx + 'px', 'margin-top' : ry + 'px', 'transform' : 'rotateX(' + ry  * -1 + 'deg) rotateY(' + rx + 'deg)'});
+				}
+				
+				/*if (e.axis.includes("SHOULDER"))
+					$('div[data-name="' + e.axis + '"]').css('opacity', e.value);*/
+					
 				switch (e.axis) {
 					case "LEFT_STICK_Y":
 						ly = e.value * 22;

@@ -70,6 +70,7 @@ var cemu = {
         },
         select: function(current) {
             if (current != cemu.selected && exe) {
+				Events.onGameSelected(current.game, current.titleId);
                 cemu.selected = current;
                 $('#background').css('background-image', 'url("img/background/' + app.getPicture(current.game) + '.jpg")');
                 $('#game-icon').css('background-image', 'url("img/icon/' + app.getPicture(current.game) + '.png")');
@@ -77,7 +78,6 @@ var cemu = {
                 $('#game-playtime').text(app.getTimePlayed(current.game));
                 $('#game-lastplayed').text(app.getLastPlayed(current.game));
                 $('.game').removeClass('selected');
-                Events.onGameSelected(current.game, current.titleId);
             }
         }
     },
