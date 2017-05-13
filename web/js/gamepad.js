@@ -45,13 +45,47 @@ var Controller = {
 				console.log(e.control);
 				switch (e.control) {
 					case "DPAD_DOWN":
-						$('tr.selected').next().mouseenter();//console.log("Move down.");
-						$('#games-container').scrollTo($('tr.selected'));
+						if (Settings.load("layout") != "Tiled") {
+							$('tr.selected').next().mouseenter();//console.log("Move down.");
+							$('#games-container').scrollTo($('#games-tiled img.hovered'));
+						} else {
+							var selected = $('#games-tiled img.hovered');
+							$($('#games-tiled img')[selected.index() + 5]).mouseenter().addClass("hovered");
+							selected.removeClass("hovered");
+							$('#games-container').scrollTo($('#games-tiled img.hovered'));
+						}
 					break;
 					
 					case "DPAD_UP":
-						$('tr.selected').prev().mouseenter();//console.log("Move up.");
-						$('#games-container').scrollTo($('tr.selected'));
+						if (Settings.load("layout") != "Tiled") {
+							$('tr.selected').prev().mouseenter();//console.log("Move up.");
+							$('#games-container').scrollTo($('#games-tiled img.hovered'));
+						} else {
+							var selected = $('#games-tiled img.hovered');
+							$($('#games-tiled img')[selected.index() - 5]).mouseenter().addClass("hovered");
+							selected.removeClass("hovered");
+							$('#games-container').scrollTo($('#games-tiled img.hovered'));
+						}
+					break;
+					
+					case "DPAD_RIGHT":
+						if (Settings.load("layout") != "Tiled")
+							return;
+						
+						var selected = $('#games-tiled img.hovered');
+						$($('#games-tiled img')[selected.index() + 1]).mouseenter().addClass("hovered");
+						selected.removeClass("hovered");
+						$('#games-container').scrollTo($('#games-tiled img.hovered'));
+					break;
+					
+					case "DPAD_LEFT":
+						if (Settings.load("layout") != "Tiled")
+							return;
+						
+						var selected = $('#games-tiled img.hovered');
+						$($('#games-tiled img')[selected.index() - 1]).mouseenter().addClass("hovered");
+						selected.removeClass("hovered");
+						$('#games-container').scrollTo($('#games-tiled img.hovered'));
 					break;
 					
 					case "FACE_1":
@@ -99,10 +133,10 @@ var Controller = {
 						if ($('#navigation').hasClass('top')) {
 							if (e.value == 1) {
 								$('tr.selected').next().mouseenter();//console.log("Move down.");
-								$('#games-container').scrollTo($('tr.selected'));
+								$('#games-container').scrollTo($('#games-tiled img.hovered'));
 							} else if (e.value == -1) {
 								$('tr.selected').prev().mouseenter();//console.log("Move up.");
-								$('#games-container').scrollTo($('tr.selected'));
+								$('#games-container').scrollTo($('#games-tiled img.hovered'));
 							}
 						}
 					break;

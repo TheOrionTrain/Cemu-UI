@@ -162,7 +162,7 @@ h2 {
     transition: .2s;
     cursor: pointer;
 }
-#games-tiled img:hover {
+#games-tiled img:hover, #games-tiled img.hovered {
     transform: scale(1.05);
 }
 #games .game td {
