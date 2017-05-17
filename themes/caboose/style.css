@@ -123,7 +123,7 @@ h1 span {
 #game-icon {
     width: 10vw;
     height: 10vw;
-    background: url('../img/icon/Hyrule Warriors.png') no-repeat center/contain;
+    background: url('../../ui/img/icon/Hyrule Warriors.png') no-repeat center/contain;
 }
 h2 {
     font-size: 2.77vh;
@@ -210,7 +210,7 @@ h2 {
 }
 #background {
     z-index: 1;
-    background: url('../img/background/Hyrule Warriors.jpg') no-repeat center/cover #262626;
+    background: url('../../ui/img/background/Hyrule Warriors.jpg') no-repeat center/cover #262626;
     filter: blur(.4vh);
 }
 #cemu-ui .container {
@@ -360,7 +360,7 @@ h3 {
 .controller {
     width: 51vh;
     height: 43vh;
-    background-image: url(../controllers/black-xb1/base.svg);
+    background-image: url(../../ui/controllers/black-xb1/base.svg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -369,7 +369,7 @@ h3 {
 }
 .controller .stick {
     position: absolute;
-    background: url(../controllers/black-xb1/stick.svg);
+    background: url(../../ui/controllers/black-xb1/stick.svg);
     background-position: -7vh 0;
     background-size: 14vh;
     background-repeat: no-repeat;
@@ -390,7 +390,7 @@ h3 {
 
 .controller .button {
     position: absolute;
-    background: url(../controllers/black-xb1/abxy.svg);
+    background: url(../../ui/controllers/black-xb1/abxy.svg);
     background-size: 14vh;
     background-repeat: no-repeat;
     height: 3.4vh;
@@ -427,7 +427,7 @@ h3 {
 
 .controller .trigger {
     position: absolute;
-    background: url(../controllers/black-xb1/trigger.svg);
+    background: url(../../ui/controllers/black-xb1/trigger.svg);
     background-size: 6vh;
     background-repeat: no-repeat;
     height: 9vh;
@@ -447,7 +447,7 @@ h3 {
 
 .controller .bumper {
     position: absolute;
-    background: url(../controllers/black-xb1/bumper.svg);
+    background: url(../../ui/controllers/black-xb1/bumper.svg);
     background-size: 11.5vh;
     background-repeat: no-repeat;
     height: 5vh;
@@ -467,7 +467,7 @@ h3 {
 
 .controller .start {
     position: absolute;
-    background: url(../controllers/black-xb1/start-select.svg);
+    background: url(../../ui/controllers/black-xb1/start-select.svg);
     background-size: 5vh;
     background-repeat: no-repeat;
     background-position: -2.5vh;
@@ -480,7 +480,7 @@ h3 {
 
 .controller .select {
     position: absolute;
-    background: url(../controllers/black-xb1/start-select.svg);
+    background: url(../../ui/controllers/black-xb1/start-select.svg);
     background-size: 5vh;
     background-repeat: no-repeat;
     height: 2.5vh;
@@ -492,7 +492,7 @@ h3 {
 
 .controller .dpad {
     position: absolute;
-    background: url(../controllers/black-xb1/dpad.svg);
+    background: url(../../ui/controllers/black-xb1/dpad.svg);
     background-size: 4vh;
     background-repeat: no-repeat;
     opacity: 0;
@@ -532,5 +532,5 @@ h3 {
 
 #store-tiled img .installed {
 	position: absolute;
-    background: url(../img/installed.png);
+    background: url(../../ui/img/installed.png);
 }
