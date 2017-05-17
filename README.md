@@ -1,8 +1,8 @@
 # Cemu-UI
 
-User interface built for Cemu in HTML, CSS, and JavaScript on top of C# and the Chromium Embeded Framework (CEF).
+User interface built for Cemu in HTML, CSS, and JavaScript on top of C# and the Chromium Embedded Framework (CEF).
 
-Created by Orion (Shadowfita) and <a target="_null" href="https://thefeeltra.in">TheFeelTrain</a>
+Created by Orion (Shadowfita) and <a target="_null" href="https://thefeeltra.in">TheFeelTrain</a>.
 
 &nbsp;
 
