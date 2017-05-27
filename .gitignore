@@ -1,3 +1,6 @@
 *.log
 *.json
 !theme.json
+ui/img/icon/
+ui/img/background/
+meta/
