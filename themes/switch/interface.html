@@ -3,28 +3,98 @@
 
 <head>
     <title>Cemu UI</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="../../ui/js/jquery.min.js"></script>
+    <script src="../../ui/js/gamepad.js"></script>
+    <script src="../../ui/js/gamepad.min.js"></script>
+    <script src="../../ui/js/jquery.scrollTo.js"></script>
     <script>
+        $(document).ready(initialize);
 
-        window.onload = setTimeout(function() {
-            let click = new Audio("switch.ogg");
+        let clock = setInterval(function() {
+            $('.clock').html(formatAMPM(new Date()));
+        }, 10000);
+
+        function formatAMPM(date) {
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            var strTime = hours + ':' + minutes + ' <span>' + ampm + "</span>";
+            return strTime;
+        }
+
+        function initialize() {
+
+            $('.clock').html(formatAMPM(new Date()));
+
+            setTimeout(function() {
+                let click = new Audio("switch.ogg");
                 click.volume = 0.5;
                 click.play();
-        }, 500);
+                setTimeout(function() {
+                    $('.loading').fadeOut(500);
+                }, 1000);
+            }, 500);
 
+        }
     </script>
 </head>
 
 <body>
-    <div class="loading">
-        <div class="logo">
-            <img class="logo-left" src="img/logo-left.svg">
-            <img class="logo-right" src="img/logo-right.svg">
+    <div class="cemu-ui">
+
+        <div class="loading">
+            <div class="logo">
+                <img class="logo-left" src="img/logo-left.svg">
+                <img class="logo-right" src="img/logo-right.svg">
+            </div>
+            <div class="nintendo-switch">
+                <img src="img/nintendo-switch.svg">
+            </div>
         </div>
-        <div class="nintendo-switch">
-            <img src="img/nintendo-switch.svg">
+
+        <div class="navigation">
+
+            <div class="profile left"></div>
+            <div class="chat left"></div>
+            <div class="friends left"></div>
+            <div class="headset left"></div>
+
+            <div class="clock right"></div>
+
         </div>
-    </div>
+
+        <div class="games-container">
+            <span class="title">Hyrule Warriors</span>
+            <div class="games">
+                <div class="game selected" style="background-image: url('../../ui/img/background/Hyrule Warriors.jpg')"></div>
+                <div class="game" style="background-image: url('../../ui/img/background/Mario Kart 8.jpg')"></div>
+                <div class="game" style="background-image: url(../../ui/img/background/Splatoon.jpg)"></div>
+                <div class="game" style="background-image: url('../../ui/img/background/Super Mario Maker.jpg')"></div>
+            </div>
+        </div>
+
+        <div class="circle-nav">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
+        <div class="bottom">
+            <div class="logo left">Cemu <span>1.8.0b</span></div>
+            <div class="start right">Start</div>
+            <div class="options right">Options</div>
+        </div>
+
 </body>
 
 </html>
