@@ -32,6 +32,7 @@ html, body {
 @keyframes logo-anim-left {
     from {
         top: 0;
+        transform: scale(1) translate(0);
     }
     26% {
         top: 0;
@@ -42,10 +43,19 @@ html, body {
     40% {
         top: 0;
     }
+    65% {
+        opacity: 1;
+        transform: scale(1) translate(0);
+    }
+    100% {
+        transform: scale(1.5) translate(-100%);
+        opacity: 0;
+    }
 }
 @keyframes logo-anim-right {
     from {
         top: -45px;
+        transform: scale(1) translate(0);
     }
     25% {
         top: -50px;
@@ -54,16 +64,46 @@ html, body {
         top: 7px;
     }
     40% {
-        top: 0px;
+        top: 0;
+    }
+    65% {
+        opacity: 1;
+        transform: scale(1) translate(0);
+    }
+    100% {
+        transform: scale(1.5) translate(100%);
+        opacity: 0;
+    }
+}
+@keyframes logo-nintendo {
+    from {
+        opacity: 1;
+        transform: scale(1) translate(0);
+    }
+    65% {
+        opacity: 1;
+        transform: scale(1) translate(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5) translateY(100%);
     }
 }
 .logo-left {
     animation-duration: 2s;
     animation-name: logo-anim-left;
     animation-iteration-count: 1;
+    animation-fill-mode: both;
 }
 .logo-right {
     animation-duration: 2s;
     animation-name: logo-anim-right;
     animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+.nintendo-switch {
+    animation-duration: 2s;
+    animation-name: logo-nintendo;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
 }
