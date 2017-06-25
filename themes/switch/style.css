@@ -97,18 +97,21 @@ html, body {
     }
 }
 .logo-left {
+	animation-delay: 1s;
     animation-duration: 2s;
     animation-name: logo-anim-left;
     animation-iteration-count: 1;
     animation-fill-mode: both;
 }
 .logo-right {
+	animation-delay: 1s;
     animation-duration: 2s;
     animation-name: logo-anim-right;
     animation-iteration-count: 1;
     animation-fill-mode: both;
 }
 .nintendo-switch {
+	animation-delay: 1s;
     animation-duration: 2s;
     animation-name: logo-nintendo;
     animation-iteration-count: 1;
