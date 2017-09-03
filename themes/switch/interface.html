@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="../../ui/js/jquery.min.js"></script>
+    <script src="../../ui/js/cemu-ui.js"></script>
     <script src="../../ui/js/gamepad.js"></script>
     <script src="../../ui/js/gamepad.min.js"></script>
     <script src="../../ui/js/jquery.scrollTo.js"></script>
@@ -90,11 +91,147 @@
         </div>
 
         <div class="bottom">
-            <div class="logo left">Cemu <span>1.8.0b</span></div>
+            <div class="logo left">Cemu <span>1.9.1</span></div>
             <div class="start right">Start</div>
-            <div class="options right">Options</div>
+            <div id="settings" class="options right">Options</div>
         </div>
 
+        <div id="settings-container" class="fullscreen">
+            <h3>Settings</h3>
+            <ul class="nav">
+                <li class="on">Directories</li>
+                <li>Interface</li>
+                <li>Plugins</li>
+                <li>Input</li>
+            </ul>
+            <div class="settings" id="directories">
+                <table class="setting">
+                    <tr class="title">
+                        <td colspan="2">Directories</td>
+                    </tr>
+                    <tr>
+                        <td>Game Directory</td>
+                        <td data-setting="game-dir"></td>
+                    </tr>
+                    <tr>
+                        <td>Cemu Directory</td>
+                        <td data-setting="cemu-dir"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="settings" id="interface">
+                <table class="setting">
+                    <tr class="title">
+                        <td colspan="2">Interface</td>
+                    </tr>
+                    <tr>
+                        <td>Fullscreen</td>
+                        <td data-setting="fullscreen">
+                            <select>
+                                <option selected>Windowed</option>
+                                <option>Fullscreen</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Theme</td>
+                        <td data-setting="theme">
+                            <select>
+                                <option selected>Dark</option>
+                                <option>Light</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Layout</td>
+                        <td data-setting="layout">
+                            <select>
+                                <option selected>Table</option>
+                                <option>Tiled</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Background Changes</td>
+                        <td data-setting="background">
+                            <select>
+                                <option selected>On Hover</option>
+                                <option>On Click</option>
+                                <option>Never</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="settings" id="plugins">
+                <div class="plugins">
+                    <div class="title">Plugins</div>
+                    <div class="plugin">
+                        <span class="name">Citra</span>
+                        <span class="author">JakeFromStateFarm</span>
+                        <span class="description">A plugin for eating citrus fruit with the tribal chick from Far Cry 3.</span>
+                        <span class="check"><input type="checkbox" checked></span>
+                    </div>
+                    <div class="plugin">
+                        <span class="name">Australian Outback</span>
+                        <span class="author">A Mate, Mate</span>
+                        <span class="description">Injects authentic roos, spiders, and sneks into Mario Kart 8.</span>
+                        <span class="check"><input type="checkbox" checked></span>
+                    </div>
+                    <div class="plugin">
+                        <span class="name">Generic Plugin #3</span>
+                        <span class="author">Some Developer</span>
+                        <span class="description">Some more filler text for this plugin description to test out how it looks.</span>
+                        <span class="check"><input type="checkbox" checked></span>
+                    </div>
+                </div>
+            </div>
+            <div class="settings" id="input">
+                <table class="setting">
+                    <tr class="title">
+                        <td colspan="2">Input</td>
+                    </tr>
+                    <tr>
+                        <td>Controller</td>
+                        <td data-setting="controller">
+                            <select>
+                                <option>None</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Keybindings</td>
+                    </tr>
+                </table>
+                <div class="controller">
+                    <div class="bumper left" data-name="LEFT_TOP_SHOULDER"></div>
+                    <div class="bumper right" data-name="RIGHT_TOP_SHOULDER"></div>
+                    <div class="stick left" data-name="LEFT_STICK"></div>
+                    <div class="stick right" data-name="RIGHT_STICK"></div>
+                    <div class="trigger left" data-name="LEFT_BOTTOM_SHOULDER"></div>
+                    <div class="trigger right" data-name="RIGHT_BOTTOM_SHOULDER"></div>
+                    <div class="start" data-name="START_FORWARD"></div>
+                    <div class="select" data-name="SELECT_BACK"></div>
+                    <div class="button a" data-name="FACE_1"></div>
+                    <div class="button b" data-name="FACE_2"></div>
+                    <div class="button x" data-name="FACE_3"></div>
+                    <div class="button y" data-name="FACE_4"></div>
+                    <div class="dpad left" data-name="DPAD_LEFT"></div>
+                    <div class="dpad right" data-name="DPAD_RIGHT"></div>
+                    <div class="dpad up" data-name="DPAD_UP"></div>
+                    <div class="dpad down" data-name="DPAD_DOWN"></div>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <div class="logo left">Cemu <span>1.9.1</span></div>
+                <div class="a-button right">OK</div>
+                <div id="settings" class="b-button right">Back</div>
+            </div>
+
+        </div>
+
+    </div>
 </body>
 
 </html>
