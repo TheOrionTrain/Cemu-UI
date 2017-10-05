@@ -70,7 +70,7 @@ h1 span {
     width: 16vw;
     transform: translateY(0);
 }
-#navigation a {
+#navigation a, #close-settings {
     font-size: 3vh;
     position: absolute;
     top: 55.55vh;
@@ -106,7 +106,7 @@ h1 span {
     opacity: 0;
     background: transparent;
 }
-#navigation.top #settings {
+#navigation.top #settings, #close-settings {
     top: 7vh;
     right: 3.9vw;
     width: 9vw;
