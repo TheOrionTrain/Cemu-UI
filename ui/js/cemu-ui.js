@@ -82,7 +82,7 @@ var cemu = {
                 cemu.selected = current;
                 $('#background').css('background-image', 'url("../../ui/img/background/' + app.getPicture(current.game) + '.jpg")');
                 $('#game-icon').css('background-image', 'url("../../ui/img/icon/' + app.getPicture(current.game) + '.png")');
-                $('h2').text(app.getName(current.game));
+                $('#game-info h2').text(app.getName(current.game));
                 $('#game-playtime').text(app.getTimePlayed(current.game));
                 $('#game-lastplayed').text(app.getLastPlayed(current.game));
                 $('.game').removeClass('selected');
