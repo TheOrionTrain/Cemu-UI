@@ -7,6 +7,9 @@ var cemu = {
             $('#settings').click(function() {
                 $('#settings-container').addClass('center');
             });
+            $('#close-settings').click(function() {
+                $('#settings-container').removeClass('center');
+            });
             $('.game').hover(function() {
                 cemu.select({
                     game: $(this).attr('data-game-id'),
