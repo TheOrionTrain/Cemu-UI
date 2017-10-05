@@ -4,6 +4,11 @@ var cemu = {
             $('#directory').click(function() {
                 $('#navigation').addClass('top');
             });
+            $("body").keydown(function(event) {
+                if(event.which == 68) {
+                    $('#download').toggle();
+                }
+            });
             $('#settings').click(function() {
                 $('#settings-container').addClass('center');
             });
